@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
 import { initialProfile } from "@/lib/initial-profile";
+import { redirect } from "next/navigation";
 import React from "react";
 
 type Props = {};
@@ -16,6 +17,10 @@ const HomePage = async (props: Props) => {
       },
     },
   });
+
+  if (server) {
+    return redirect(`/servers/${server.id}`);
+  }
 
   return <div>Create A Server</div>;
 };
