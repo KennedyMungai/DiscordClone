@@ -1,4 +1,8 @@
 "use client";
+
+import { UploadDropzone } from "@/lib/uploadthing";
+import "@uploadthing/react/styles.css";
+
 type Props = {
   endpoint: "messageFile" | "serverImage";
   value: string;
@@ -6,7 +10,17 @@ type Props = {
 };
 
 const FileUpload = ({ endpoint, value, onChange }: Props) => {
-  return <div>FileUpload</div>;
+  return (
+    <UploadDropzone
+      endpoint={endpoint}
+      onClientUploadComplete={(res) => {
+        onChange(res?.[0].fileUrl);
+      }}
+      onUploadError={(error: Error) => {
+        console.log(error);
+      }}
+    />
+  );
 };
 
 export default FileUpload;
