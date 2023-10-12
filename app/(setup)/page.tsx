@@ -1,3 +1,4 @@
+import InitialModal from "@/components/Modals/InitialModal";
 import { db } from "@/lib/db";
 import { initialProfile } from "@/lib/initial-profile";
 import { redirect } from "next/navigation";
@@ -22,7 +23,7 @@ const HomePage = async (props: Props) => {
     return redirect(`/servers/${server.id}`);
   }
 
-  return <div>Create A Server</div>;
+  return <InitialModal />;
 };
 
 export default HomePage;
