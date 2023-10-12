@@ -5,7 +5,7 @@ type Props = {
 };
 
 const AuthLayout = ({ children }: Props) => {
-  return <div>{children}</div>;
+  return <div className="flex items-center justify-center">{children}</div>;
 };
 
 export default AuthLayout;
