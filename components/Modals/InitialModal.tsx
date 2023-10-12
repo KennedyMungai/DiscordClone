@@ -1,9 +1,8 @@
-import React from "react";
-
+"use client";
 type Props = {};
 
 const InitialModal = (props: Props) => {
-  return <div>InitialModal</div>;
+  return <div>This will be a modal</div>;
 };
 
 export default InitialModal;
